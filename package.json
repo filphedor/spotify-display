@@ -1,0 +1,60 @@
+{
+  "name": "spotify-display",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run compile && npm run copy",
+    "compile": "webpack --config config/webpack.config.js",
+    "copy": "npm run copy:public",
+    "copy:public": "copyfiles -u 1 public/**/**/*.* public/**/*.* public/*.* dist",
+    "dev": "webpack serve --config config/webpack.config.dev.js",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint:js": "eslint \"./src/**/*.js\""
+  },
+  "dependencies": {
+    "@babel/core": "7.25.9",
+    "@babel/eslint-parser": "^7.25.9",
+    "@babel/eslint-plugin": "^7.25.9",
+    "@babel/preset-env": "^7.25.9",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/free-regular-svg-icons": "^6.1.2",
+    "@fortawesome/free-brands-svg-icons": "^6.1.2",
+    "axios": "^1.7.9",
+    "babel-loader": "9.2.1",
+    "copyfiles": "^2.4.1",
+    "core-js": "^3.40.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.18.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "sass": "^1.83.4",
+    "sass-loader": "^16.0.4",
+    "stylelint": "^16.13.2",
+    "stylelint-order": "^6.0.4",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^5.2.0"
+  },
+  "stylelint": {
+    "extends": "./config/.stylelintrc.yml"
+  },
+  "eslintConfig": {
+    "extends": "./config/.eslintrc.yml"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

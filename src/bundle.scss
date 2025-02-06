@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-weight: 300;
+    font-size: 1em;
+    font-family: "Lato";
+    background-color: #FFFFFF;
+}
+
+$thin: 100;
+$light: 300;
+$regular: 500;
+$bold: 700;
+$black: 900;
+
+@font-face {
+    font-weight: $black;
+    font-style: normal;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-weight: $black;
+    font-style: italic;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-BlackItalic.ttf");
+}
+
+@font-face {
+    font-weight: $bold;
+    font-style: normal;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-Bold.ttf");
+}
+
+@font-face {
+    font-weight: $bold;
+    font-style: italic;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-BoldItalic.ttf");
+}
+
+@font-face {
+    font-weight: $regular;
+    font-style: normal;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-Regular.ttf");
+}
+
+@font-face {
+    font-weight: $regular;
+    font-style: italic;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-Italic.ttf");
+}
+
+@font-face {
+    font-weight: $light;
+    font-style: normal;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-Light.ttf");
+}
+
+@font-face {
+    font-weight: $light;
+    font-style: italic;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-LightItalic.ttf");
+}
+
+@font-face {
+    font-weight: $thin;
+    font-style: normal;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-Thin.ttf");
+}
+
+@font-face {
+    font-weight: $thin;
+    font-style: italic;
+    font-family: "Lato";
+    src: url("/fonts/lato/Lato-ThinItalic.ttf");
+}
+
+.spotify-display {
+    float: left;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #111111;
+}
+
+#image {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}

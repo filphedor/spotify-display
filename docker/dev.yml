@@ -1,0 +1,13 @@
+services:
+    client:
+        build:
+            target: npm
+        entrypoint: ["npm", "run", "dev"]
+        volumes:
+            - ../src:/home/dockeruser/project/src
+        ports:
+            - 3000:3000
+        env_file:
+            - .dev.env
+            - .local.env
+

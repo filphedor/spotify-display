@@ -1,0 +1,11 @@
+name: spotify-display
+services:
+    client:
+        build:
+            context: ../
+            dockerfile: ./docker/client.Dockerfile
+        ports:
+            - 80:80
+        env_file:
+            - .dev.env
+            - .local.env
