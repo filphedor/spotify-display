@@ -43,8 +43,23 @@ RUN npm run build
 
 FROM httpd:2.4.62 AS apache
 
+ARG CONF_FILE
+ARG SSL_KEY
+ARG SSL_CERT
+ARG SERVER_NAME
+
+ENV SSL_KEY=${SSL_KEY}
+ENV SSL_CERT=${SSL_CERT}
+ENV SERVER_NAME=${SERVER_NAME}
+
+RUN mkdir /usr/local/apache2/ssl
+
+RUN echo "$SSL_CERT" > /usr/local/apache2/ssl/cert.crt
+RUN echo "$SSL_KEY" > /usr/local/apache2/ssl/key.key
+
 COPY ./apache/httpd.conf /usr/local/apache2/conf/httpd.conf
 
 COPY --from=npm /home/dockeruser/project/dist /usr/local/apache2/htdocs/
 
 EXPOSE 80
+EXPOSE 443

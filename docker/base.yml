@@ -4,8 +4,16 @@ services:
         build:
             context: ../
             dockerfile: ./docker/client.Dockerfile
+            args:
+                - CONF_FILE=./apache/httpd.conf
+                - SSL_CERT=${SSL_CERT}
+                - SSL_KEY=${SSL_KEY}
+                - SERVER_NAME=${SERVER_NAME}
+                - SPOTIFY_CLIENT_ID=${SPOTIFY_CLIENT_ID}
+                - REDIRECT_URI=${REDIRECT_URI}
         ports:
             - 80:80
+            - 443:443
         env_file:
             - .dev.env
             - .local.env
