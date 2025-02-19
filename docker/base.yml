@@ -5,7 +5,6 @@ services:
             context: ../
             dockerfile: ./docker/client.Dockerfile
             args:
-                - CONF_FILE=./apache/httpd.conf
                 - SSL_CERT=${SSL_CERT}
                 - SSL_KEY=${SSL_KEY}
                 - SERVER_NAME=${SERVER_NAME}

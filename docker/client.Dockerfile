@@ -43,7 +43,6 @@ RUN npm run build
 
 FROM httpd:2.4.62 AS apache
 
-ARG CONF_FILE
 ARG SSL_KEY
 ARG SSL_CERT
 ARG SERVER_NAME
